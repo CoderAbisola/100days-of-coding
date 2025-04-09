@@ -27,7 +27,6 @@ function clearDisplay() {
   waitingForSecond = false;
   justCalculated = false;
 
-  // Remove active class from all operator buttons
   document.querySelectorAll('.operator').forEach(btn => {
     btn.classList.remove('active');
   });
@@ -36,12 +35,10 @@ function clearDisplay() {
 function setOperator(operator) {
   const inputValue = parseFloat(display.value);
 
-  // Remove active class from all operator buttons
   document.querySelectorAll('.operator').forEach(btn => {
     btn.classList.remove('active');
   });
 
-  // Find and highlight the clicked operator button
   const clickedBtn = Array.from(document.querySelectorAll('.operator')).find(btn => btn.textContent === operator);
   if (clickedBtn) {
     clickedBtn.classList.add('active');
@@ -87,7 +84,6 @@ function calculateResult() {
   waitingForSecond = false;
   justCalculated = true;
 
-  // Remove active class from all operator buttons
   document.querySelectorAll('.operator').forEach(btn => {
     btn.classList.remove('active');
   });
